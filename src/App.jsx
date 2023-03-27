@@ -1,10 +1,16 @@
 import "./App.css";
+import "leaflet/dist/leaflet.css";
+
+import { MapContainer, TileLayer } from "react-leaflet";
 
 function App() {
   return (
-    <div className="App">
-      <h1>Maps App</h1>
-    </div>
+    <MapContainer center={[48.8566, 2.3522]} zoom={13}>
+      <TileLayer
+        attribution='&copy; <a href="https://www.opentreetmap.org/copyright">OpenStreetMap</a>contributors'
+        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+      />
+    </MapContainer>
   );
 }
 
