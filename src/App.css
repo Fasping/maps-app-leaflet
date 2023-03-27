@@ -1,6 +1,20 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+.App {
+  font-family: sans-serif;
   text-align: center;
+}
+
+:root {
+  height: 1000vh;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* sizing of map container */
+
+.leaflet-container {
+  height: 100vh;
 }
