@@ -2,6 +2,7 @@ import "./App.css";
 import "leaflet/dist/leaflet.css";
 
 import { MapContainer, TileLayer, Marker } from "react-leaflet";
+import { Icon } from "leaflet";
 
 function App() {
   const markers = [
@@ -19,6 +20,11 @@ function App() {
     },
   ];
 
+  const customIcon = new Icon({
+    iconUrl: "https://cdn-icons-png.flaticon.com/128/186/186250.png",
+    iconSize: [38, 38], // size of the icon
+  });
+
   return (
     <MapContainer center={[48.8566, 2.3522]} zoom={13}>
       <TileLayer
@@ -27,7 +33,7 @@ function App() {
       />
 
       {markers.map((marker) => (
-        <Marker position={marker.geocode}></Marker>
+        <Marker position={marker.geocode} icon={customIcon}></Marker>
       ))}
     </MapContainer>
   );
