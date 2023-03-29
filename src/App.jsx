@@ -1,7 +1,7 @@
 import "./App.css";
 import "leaflet/dist/leaflet.css";
 
-import { MapContainer, TileLayer, Marker } from "react-leaflet";
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import { Icon } from "leaflet";
 
 function App() {
@@ -33,7 +33,11 @@ function App() {
       />
 
       {markers.map((marker) => (
-        <Marker position={marker.geocode} icon={customIcon}></Marker>
+        <Marker position={marker.geocode} icon={customIcon}>
+          <Popup>
+            {marker.popUp}
+          </Popup>
+        </Marker>
       ))}
     </MapContainer>
   );
